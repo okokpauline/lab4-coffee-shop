@@ -1,0 +1,95 @@
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 4 - Coffee Shop</title>
+    <link rel="stylesheet" href="lab4.css">
+    <script src="lab4.js"></script>
+</head>
+
+<body class="main">
+    <main>
+        <h1>Coffee Shop</h1>
+        <div>
+            <input type="button" id="my-directions" value="Click for directions" />
+            <div id="how-to"></div>
+        </div>
+
+        <div>
+            <div style="text-align: center;">
+                <h3>Menu</h3>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Volume</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>Tall</td>
+                        <td>9 oz</td>
+                        <td>$2.95</td>
+                    </tr>
+                    <tr>
+                        <td>Grande</td>
+                        <td>12 oz</td>
+                        <td>$3.65</td>
+                    </tr>
+                    <tr>
+                        <td>Venti</td>
+                        <td>15 oz</td>
+                        <td>$4.15</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div>
+            <label for="tall-number">Tall Cups </label>
+            <input type="textbox" class="cupnumber"  id="tall-number" />
+            <input type="button" id="remove-tall" value="-" />
+            <input type="button" id="add-tall" value="+" style="margin-left: 0px" />
+        </div>
+
+        <div>
+            <label for="grande-number">Grande Cups </label>
+            <input type="textbox" class="cupnumber"  id="grande-number" />
+            <input type="button" id="remove-grande" value="-" />
+            <input type="button" id="add-grande" value="+" style="margin-left: 0px" />
+        </div>
+
+        <div>
+            <label for="venti-number">Venti Cups </label>
+            <input type="textbox" id="venti-number" />
+            <input type="button" id="remove-venti" value="-" />
+            <input type="button" id="add-venti" value="+" style="margin-left: 0px" />
+        </div>
+
+
+        <div>
+            <label for="price">Price</label>
+            <input type="textbox" id="price" />
+        </div>
+
+        <div>
+            <label for="tax-rate">Tax Rate</label>
+            <input type="textbox" id="tax-rate" />
+        </div>
+
+        <div>
+            <label for="total-amount">Total Amount</label>
+            <input type="textbox" id="total-amount" />
+        </div>
+
+        <div>
+            <label>&nbsp;</label>
+            <input type="button" id="clear-button" value="Clear" />
+            <input type="button" id="complete-order" value="Complete order" />
+        </div>
+        <div id="order-message"></div>
+    </main>
+</body>
+
+</html>
