@@ -9,6 +9,8 @@ let venti = 0;
 let price = 0;
 let tax = 0;
 let totalAmount = 0;
+let totalVolume = 0;
+
 
 const doAddTallCup = () => {
 	tall++;
@@ -56,20 +58,34 @@ const doClearAll = () => {
 	price = 0;
   tax = 0;
   totalAmount = 0;
+	totalVolume = 0;
 	doOrder();
+	doCompleteOrder ();
 };
 
 const doOrder = () => {
 	price = (tall * 3.99) + (grande * 4.50) + (venti * 5.99);
 	tax = price * taxRate;
 	totalAmount = price + tax;
-	$('#price').value = '$' + price;
-	$('#tax-rate').value = '$' + tax;
-	$('#total-amount').value = '$' + totalAmount;
+	totalVolume = (tall * 9) + (grande * 12) + (venti * 15);
 	$('#tall-number').value = tall;
   $('#grande-number').value = grande;
   $('#venti-number').value = venti;
+	$('#price').value = '$' + price.toFixed(2);
+	$('#tax-rate').value = '$' + tax.toFixed(2);
+	$('#total-amount').value = '$' + totalAmount.toFixed(2);
+	$ ('#total-volume').value = totalVolume + 'oz';
 };
+
+const doCompleteOrder = () => {
+  if (totalAmount > 0) {
+    const message = `Order completed! Total Amount: $${totalAmount.toFixed(2)}`;
+    $('#order-message').textContent = message;
+  } else {
+    $('#order-message').textContent = "No items in the order.";
+  }
+};
+
 
 document.addEventListener("DOMContentLoaded", () => {
 	// TODO: addEventListener for these methods
@@ -91,11 +107,12 @@ document.addEventListener("DOMContentLoaded", () => {
   
 	$('#clear-button').addEventListener('click', doClearAll);
 	$('#complete-order').addEventListener('click', doOrder);
+	$('#complete-order').addEventListener('click', doCompleteOrder);
 	$('#tax-rate').value = tax;
 	$('#price').value = '$' + price;
 	$('#total-amount').value = totalAmount
 	$('#tall-number').value = tall;
 	$('#grande-number').value = grande;
 	$('#venti-number').value = venti;
-
+	$ ('#total-volume').value = totalVolume + 'oz';
 });

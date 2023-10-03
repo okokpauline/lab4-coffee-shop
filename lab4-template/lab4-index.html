@@ -42,7 +42,6 @@
                   </table>
               </div>
           </div>
-
           <div>
               <label for="tall-number">Tall Cups </label>
               <input type="textbox" class="cupnumber"  id="tall-number" />
@@ -67,23 +66,28 @@
 
           <div>
               <label for="price">Price</label>
-              <input type="textbox" id="price" />
+              <input type="textbox" id="price" disabled />
           </div>
 
           <div>
               <label for="tax-rate">9.75% Tax</label>
-              <input type="textbox" id="tax-rate" />
+              <input type="textbox" id="tax-rate" disabled/>
           </div>
 
           <div>
               <label for="total-amount">Total Amount</label>
-              <input type="textbox" id="total-amount" />
+              <input type="textbox" id="total-amount" value="0oz"  disabled/>
           </div>
+
+          <div>
+            <label for="total-volume">Total Volume</label>
+            <input type="textbox" id="total-volume" disabled />
+        </div>
 
           <div>
               <label>&nbsp;</label>
               <input type="button" id="clear-button" value="Clear" />
-              <input type="button" id="complete-order" value="Complete order" />
+              <input type="button" id="complete-order" class="green-bu" value="Complete Order" />
           </div>
           <div id="order-message"></div>
       </main>
